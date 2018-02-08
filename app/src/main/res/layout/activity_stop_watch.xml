@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    tools:context="com.delacerna.alarmclockstopwatch.StopWatch">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000">
+
+        <TextView
+            android:id="@+id/toolbar_AlarmClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Alarm Clock"
+            android:layout_marginRight="45dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large.Inverse"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/toolbar_StopWatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Stopwatch"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large.Inverse"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stopwatch"
+        android:id="@+id/tvTitle"
+        android:textColor="#fff"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:layout_below="@id/toolbar"
+        />
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_centerHorizontal="true"
+        android:text="00:00:00"
+        android:textColor="#fff"
+        android:textSize="70dp"
+        android:layout_margin="16dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_play"
+            android:id="@+id/btnStart"
+            android:tint="#fff"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/btnReset"
+            />
+        <TextView
+            android:id="@+id/txtPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:layout_marginLeft="36dp"
+            android:layout_below="@id/btnReset"
+            android:textColor="#fff"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pause"
+            android:id="@+id/btnPause"
+            android:tint="#fff"
+            android:layout_toLeftOf="@id/btnReset"
+            android:layout_centerVertical="true"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/txtPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:layout_marginLeft="33dp"
+            android:layout_below="@id/btnReset"
+            android:textColor="#fff"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_reset"
+            android:id="@+id/btnReset"
+            android:layout_margin="16dp"
+            android:layout_centerInParent="true"
+            android:tint="#fff"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/txtReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btnReset"
+            android:textColor="#fff"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_timer_black_24dp"
+            android:id="@+id/btnLap"
+            android:layout_toRightOf="@id/btnReset"
+            android:tint="#fff"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/txtLap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lap"
+            android:layout_marginLeft="89dp"
+            android:layout_toRightOf="@id/txtReset"
+            android:layout_below="@id/btnReset"
+            android:textColor="#fff"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="270dp"
+        android:layout_height="1dp"
+        android:background="#808080"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvTimer">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/linearView"
+        android:layout_below="@id/tvTimer"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/tvTimeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="270dp"
+        android:layout_height="1dp"
+        android:background="#808080"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/linearView">
+
+    </LinearLayout>
+
+
+</RelativeLayout>
